@@ -56,7 +56,6 @@ table {
 
 /* 기초 세팅 */
 body {
-  min-width: 1440px;
   margin: 0;
   word-break: keep-all;
   transition: background-color 0.5s, color 0.5s;
