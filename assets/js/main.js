@@ -1,3 +1,15 @@
+// Lenis scroll
+const lenis = new Lenis();
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); 
+});
+
+gsap.ticker.lagSmoothing(0);
+
+
 // Header / nav 다국어 선택
 $('#nav .select-language .link-nav').click(function (e) {
   e.preventDefault();
@@ -11,6 +23,10 @@ $('#nav .select-language .link-nav').click(function (e) {
 });
 
 $('#nav .link-language').click(function () {
+  $('#nav .language-list').removeClass('show');
+});
+
+$("#nav .link-nav").not('.select-language .link-nav').click(function(){
   $('#nav .language-list').removeClass('show');
 });
 
@@ -58,7 +74,7 @@ gsap.set('.sc-intro .group-intro-text p', {opacity: 0});
 
 intro
   .to('.sc-intro .group-intro-text', 1, {background: 'rgba(0, 0, 0, 0.7)'}, 'bg')
-  .to('.sc-intro .intro-description1', 1, {opacity: 1}, 'bg') // 1번 문장 보이기
+  .to('.sc-intro .intro-description1', 1, {opacity: 1}, 'bg') 
   .to('.sc-intro .intro-description1', 1, {
     opacity: 0,
     onStart: function () {
@@ -68,11 +84,11 @@ intro
       $('#header').removeClass('show');
     }
   }) // 1번 문장 사라지기
-  .to('.sc-intro .intro-description2', 1, {opacity: 1}) // 2번 문장 보이기
-  .to('.sc-intro .intro-description2', 1, {opacity: 0}) // 2번 문장 사라지기
-  .to('.sc-intro .intro-description3', 1, {opacity: 1}) // 3번 문장 보이기
-  .to('.sc-intro .intro-description3', 1, {opacity: 0}) // 3번 문장 사라지기
-  .to('.sc-intro .intro-description4', 1, {opacity: 1}) // 4번 문장 보이기
+  .to('.sc-intro .intro-description2', 1, {opacity: 1}) 
+  .to('.sc-intro .intro-description2', 1, {opacity: 0}) 
+  .to('.sc-intro .intro-description3', 1, {opacity: 1}) 
+  .to('.sc-intro .intro-description3', 1, {opacity: 0}) 
+  .to('.sc-intro .intro-description4', 1, {opacity: 1}) 
   .to('.sc-intro .scroll-down', 0.1, {opacity: 0});
 
 
@@ -130,10 +146,11 @@ const possible = gsap.timeline({
     end: '100% 100%',
     // markers: true,
     scrub: true,
-    invalidateOnRefresch: true
+    invalidateOnRefresh: true
   }
 });
-possible.to('.data-possible-content', {
+possible
+.to('.data-possible-content', {
   xPercent: -100,
   x: function () {
     return window.innerWidth - 160;
@@ -189,7 +206,7 @@ const service01 = gsap.timeline({
     end: '100% 100%',
     // markers:true,
     scrub: true,
-    invalidateOnRefresch: true
+    invalidateOnRefresh: true
   }
 });
 
@@ -323,7 +340,7 @@ const assets = gsap.timeline({
     end: '100% 100%',
     // markers: true,
     scrub: true,
-    invalidateOnRefresch: true,
+    invalidateOnRefresh: true,
     toggleClass: {
       targets: '.sc-assets .assets-under',
       className: 'show'
@@ -377,7 +394,7 @@ const howTo = gsap.timeline({
     end: '100% 100%',
     // markers: true,
     scrub: true,
-    invalidateOnRefresch: true,
+    invalidateOnRefresh: true,
     onEnter: function () {
       $('.sc-how-to').css('--opacity', 1);
     },

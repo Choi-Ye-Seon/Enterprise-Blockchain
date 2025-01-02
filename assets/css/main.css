@@ -214,10 +214,11 @@
 .sc-data-possible .group-inner {
   display: flex;
   align-items: center;
-  gap: 160px;
+  /* gap: 160px; */
 }
 .sc-data-possible .main-title-l-w {
   flex-shrink: 0;
+  padding-right: 160px;
 }
 .sc-data-possible .possible-list {
   display: flex;
@@ -268,12 +269,14 @@
 }
 .sc-data-possible .group-cube {
   flex-shrink: 0;
-  padding: 0 60px 0 160px;
+  width: 100vw;
+  /* padding: 0 60px 0 160px; */
 }
-.sc-data-possible .cube-wrap {
+
+/* .sc-data-possible .cube-wrap {
   padding-left: 100px;
   width: 100vw;
-}
+} */
 .sc-data-possible .cube-inner {
   position: relative;
   width: 506px;
@@ -820,7 +823,7 @@
 
 /* Assets */
 .sc-assets {
-  height: 200vh;
+  height: 250vh;
 }
 .sc-assets .sticky-wrap {
   display: flex;
@@ -839,10 +842,11 @@
 .sc-assets .group-assets {
   display: flex;
   align-items: center;
-  column-gap: 160px;
+  /* column-gap: 160px; */
 }
 .sc-assets .group-assets .title {
   white-space: nowrap;
+  padding-right: 160px;
 }
 .sc-assets .assets-list {
   display: flex;
@@ -958,6 +962,7 @@
   line-height: 1.67;
   font-weight: 700;
   white-space: nowrap;
+  padding-left: 84px;
 }
 .sc-assets .assets-under {
   position: fixed;
@@ -1117,11 +1122,12 @@
 .sc-how-to .group-how-to {
   display: flex;
   align-items: center;
-  gap: 160px;
+  /* gap: 160px; */
   flex-shrink: 0;
 }
 .sc-how-to .title {
   white-space: nowrap;
+  padding-right: 160px;
 }
 .sc-how-to .how-to-list {
   display: flex;
@@ -1239,6 +1245,7 @@
   line-height: 1.67;
   font-weight: 700;
   padding-right: 60px;
+  padding-left: 84px;
   white-space: nowrap;
 }
 /* // how to */
