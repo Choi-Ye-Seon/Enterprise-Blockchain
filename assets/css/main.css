@@ -37,6 +37,7 @@
   line-height: 1.35;
   color: #fff;
   white-space: nowrap;
+  opacity: 0;
 }
 .sc-intro .group-intro-text p:last-child {
   font-size: 24px;

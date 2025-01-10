@@ -30,6 +30,7 @@ $("#nav .link-nav").not('.select-language .link-nav').click(function(){
   $('#nav .language-list').removeClass('show');
 });
 
+
 // Header dark 테마 컨트롤
 // .sc-anyone 영역
 ScrollTrigger.create({
@@ -59,7 +60,7 @@ ScrollTrigger.create({
 });
 
 
-// Intro Gsap
+// Intro Gsap (text 모션 + header 노출)
 const intro = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-intro',
@@ -69,8 +70,6 @@ const intro = gsap.timeline({
     scrub: true
   }
 });
-
-gsap.set('.sc-intro .group-intro-text p', {opacity: 0});
 
 intro
   .to('.sc-intro .group-intro-text', 1, {background: 'rgba(0, 0, 0, 0.7)'}, 'bg')
@@ -83,7 +82,7 @@ intro
     onReverseComplete: function () {
       $('#header').removeClass('show');
     }
-  }) // 1번 문장 사라지기
+  })
   .to('.sc-intro .intro-description2', 1, {opacity: 1}) 
   .to('.sc-intro .intro-description2', 1, {opacity: 0}) 
   .to('.sc-intro .intro-description3', 1, {opacity: 1}) 
@@ -92,7 +91,8 @@ intro
   .to('.sc-intro .scroll-down', 0.1, {opacity: 0});
 
 
-// Slogan Gsap
+
+// Slogan Gsap (text 모션션)
 const slogan = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-slogan',
@@ -102,6 +102,7 @@ const slogan = gsap.timeline({
     scrub: true
   }
 });
+
 gsap.set('.sc-slogan .slogan-text', {opacity: 0});
 slogan
   // overlay / text 노출 
@@ -226,6 +227,7 @@ service01
   .to('.sc-service .safety-item.lock .ic-lock', {opacity: 0});
 
 
+
 // 2. 금융서비스
 gsap.set('.sc-service .finance-content .head-fixed', {autoAlpha: 0});
 
@@ -249,6 +251,7 @@ const service02 = gsap.timeline({
 
 service02
   .to('.sc-service .head-card p', {opacity: 1}, 'a');
+
 
 
 // 3. 코멘트
@@ -301,6 +304,8 @@ service03
   .to('.sc-service .sub-title', {autoAlpha: 1}, 'title+=0.3');
 
 
+
+
 // White Theme
 ScrollTrigger.create({
   trigger: '.sc-service',
@@ -317,6 +322,8 @@ ScrollTrigger.create({
     $('#header').removeClass('dark');
   }
 });
+
+
 
 // sc-network
 const network = gsap.timeline({
@@ -347,12 +354,13 @@ const assets = gsap.timeline({
     },
     onUpdate: function (self) {
       console.log(self); 
+
       if (self.progress > 0.5) {
-        gsap.to('.under-title-item.future', {opacity: 1}, 'a');
+        gsap.to('.under-title-item.futrue', {opacity: 1}, 'a');
         gsap.to('.under-title-item.past', {opacity: 0}, 'a');
       } else {
-        gsap.to('.under-title-item.past', {opacity: 1}, 'a');
-        gsap.to('.under-title-item.future', {opacity: 0}, 'a');
+        gsap.to('.under-title-item.past', {opacity: 1}, 'b');
+        gsap.to('.under-title-item.futrue', {opacity: 0}, 'b');
       }
     }
   }
