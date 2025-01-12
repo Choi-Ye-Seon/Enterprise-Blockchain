@@ -92,7 +92,7 @@ intro
 
 
 
-// Slogan Gsap (text 모션션)
+// Slogan Gsap (text 모션)
 const slogan = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-slogan',
@@ -210,7 +210,7 @@ const service01 = gsap.timeline({
     invalidateOnRefresh: true
   }
 });
-
+// 카드 이동 + 겹치기
 service01
   .to('.sc-service .content-inner', {
     x: function () {
@@ -254,7 +254,7 @@ service02
 
 
 
-// 3. 코멘트
+// 3. 코멘트 card 이동+겹치기
 gsap.set('.sc-service .comment-content .head-fixed', {autoAlpha: 0});
 const service03 = gsap.timeline({
   scrollTrigger: {
@@ -420,7 +420,7 @@ howTo.to('.sc-how-to .group-how-to', {
 });
 
 
-// join
+// join marquee 모션
 const join = gsap.timeline({
   scrollTrigger: {
     trigger: '#footer',
@@ -433,15 +433,15 @@ const join = gsap.timeline({
       className: 'active'
     },
     onEnter: function () {
-      marguee.play();
+      marquee.play();
     },
     onLeaveBack: function () {
-      marguee.pause();
+      marquee.pause();
     }
   }
 });
 
-const marguee = gsap.to('.sc-join .join-inner', 10, {
+const marquee = gsap.to('.sc-join .join-inner', 10, {
   x: 700,
   repeat: -1,
   ease: 'none',
